@@ -1,0 +1,29 @@
+.c-postcomments {
+  padding-top: 20px;
+  mat-card {
+    margin: 10px;
+    background-color: rgb(255, 249, 241);
+  }
+  mat-card-content span {
+    font-weight: bold;
+  }
+  .spinner-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .c-posts_commentbox {
+    max-height: 520px;
+    overflow-y: auto;
+  }
+  .c-posts_comment {
+    width: 100%;
+  }
+  a {
+    text-decoration: underline !important;
+
+    &:hover {
+      color: #0079d3 !important;
+    }
+  }
+}

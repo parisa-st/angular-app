@@ -1,0 +1,41 @@
+<div class="c-postcomments container">
+  <h4>
+    <mat-icon> comment</mat-icon>Comments({{
+      filteredComments ? filteredComments.length : "0"
+    }})
+  </h4>
+  <hr />
+  <mat-card style="background-color: gainsboro">
+    <mat-card-header>
+      <mat-card-title>
+        <p>{{ postdata.title }}</p>
+        <hr />
+        <p>{{ postdata.body }}</p>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="c-posts_commentbox">
+      <div class="spinner-wrapper">
+        <mat-spinner
+          diameter="70"
+          *ngIf="loading"
+          mode="indeterminate"
+        ></mat-spinner>
+      </div>
+      <div *ngFor="let comment of filteredComments">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title> </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="c-posts_comment">
+            <p><span> email: </span>{{ comment.email }}</p>
+            <p><span>name: </span>{{ comment.name }}</p>
+            <p><span>comment: </span>{{ comment.body }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <a type="button" (click)="goBack()">back to posts</a>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,24 @@
+.c-posts {
+  padding-top: 20px;
+  mat-card {
+    width: 30%;
+    margin: 10px;
+    display: inline-flex;
+    background-color: gainsboro;
+  }
+  mat-card-content {
+    height: 50px;
+  }
+  .spinner-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  a {
+    text-decoration: underline;
+    color: black;
+    &:hover {
+      color: #0079d3;
+    }
+  }
+}

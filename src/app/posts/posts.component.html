@@ -1,0 +1,28 @@
+<div class="c-posts container">
+  <h4>
+    <mat-icon>list_alt</mat-icon>Posts({{ posts ? posts.length : "0" }})
+  </h4>
+  <hr />
+  <mat-grid-list cols="3">
+    <div class="spinner-wrapper">
+      <mat-spinner diameter="70" *ngIf="loading" mode="indeterminate"></mat-spinner>
+    </div>
+    <mat-card *ngFor="let post of posts">
+      <mat-card-header>
+        <mat-card-title>
+         {{post.id}}
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        {{ post.title }}
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <a
+          routerLink="/detail/{{ post.id }}"
+          [state]="{ data: { title: post.title, body: post.body } }"
+          >more details</a
+        >
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-list>
+</div>
